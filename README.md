@@ -58,11 +58,180 @@ Fix application code and answer the questions:
 
 > **What bad coding practices did you find? Why is it a bad practice and how did you fix it?**
 > 
-> _Present your findings here..._
+> **1. Spaghetti Code in HTML**
+> - **Problem**: All JavaScript code was embedded in a single `<script>` tag within HTML
+> - **Why bad**: Poor separation of concerns, difficult to maintain, test, and reuse
+> - **Fix**: Split code into separate modules (`search.js`, `comments.js`, `bearManager.js`, `main.js`)
+> 
+> ```js
+> // Bad: Everything in one script tag
+> <script>
+>   // 200+ lines of mixed functionality
+> </script>
+> 
+> // Good: Modular approach
+> import { SearchManager } from './search.js';
+> import { CommentsManager } from './comments.js';
+> import { BearManager } from './bearManager.js';
+> ```
+>
+> **2. Deprecated HTML Tags**
+> - **Problem**: Used `<font>` tags instead of semantic HTML
+> - **Why bad**: `<font>` is deprecated, poor accessibility, not semantic
+> - **Fix**: Replaced with proper heading tags (`<h1>`, `<h2>`, `<h3>`)
+>
+> ```html
+> <!-- Bad -->
+> <font size="7">Welcome to our wildlife website</font>
+> <font size="6">The trouble with Bears</font>
+> 
+> <!-- Good -->
+> <h1>Welcome to our wildlife website</h1>
+> <h2>The trouble with Bears</h2>
+> ```
+>
+> **3. Promise Chain Hell**
+> - **Problem**: Nested `.then()` callbacks creating callback hell
+> - **Why bad**: Hard to read, error handling is complex, difficult to debug
+> - **Fix**: Converted to async/await with proper error handling
 >
 > ```js
-> console.log('Make use of markdown codesnippets to show and explain good/bad practices!')
+> // Bad: Promise chains
+> fetch(url).then(function(res) {
+>   return res.json();
+> }).then(function(data) {
+>   // nested promises...
+> });
+> 
+> // Good: async/await
+> async loadBearData() {
+>   try {
+>     const response = await fetch(url);
+>     const data = await response.json();
+>     // clean, linear flow
+>   } catch (error) {
+>     console.error('Error:', error);
+>   }
+> }
 > ```
+>
+> **4. No Error Handling**
+> - **Problem**: No try/catch blocks, no user feedback on errors
+> - **Why bad**: Application crashes silently, poor user experience
+> - **Fix**: Added comprehensive error handling with user-friendly messages
+>
+> ```js
+> // Bad: No error handling
+> var nameValue = nameField.valeu; // typo causes silent failure
+> 
+> // Good: Proper validation and error handling
+> try {
+>   const nameValue = this.nameField.value.trim();
+>   if (!nameValue || !commentValue) {
+>     alert('Both name and comment fields are required!');
+>     return;
+>   }
+> } catch (error) {
+>   console.error('Comment submission failed:', error);
+>   alert('Failed to submit comment. Please try again.');
+> }
+> ```
+>
+> **5. Typos and Variable Name Errors**
+> - **Problem**: `nameField.valeu` instead of `value`, `textContnet` instead of `textContent`
+> - **Why bad**: Causes runtime errors, breaks functionality
+> - **Fix**: Corrected all typos and added proper validation
+>
+> ```js
+> // Bad: Typos
+> var nameValue = nameField.valeu;
+> namePara.textContnet = nameValue;
+> 
+> // Good: Correct property names
+> const nameValue = this.nameField.value.trim();
+> namePara.textContent = nameValue;
+> ```
+>
+> **6. Poor Table Accessibility**
+> - **Problem**: Table headers using `<td>` instead of `<th>`, no scope attributes
+> - **Why bad**: Screen readers can't understand table structure
+> - **Fix**: Added proper table semantics with `<th scope="col">` and `<caption>`
+>
+> ```html
+> <!-- Bad -->
+> <table>
+>   <thead>
+>     <tr>
+>       <td>Bear Type</td>
+>       <td>Coat</td>
+>     </tr>
+>   </thead>
+> </table>
+> 
+> <!-- Good -->
+> <table>
+>   <caption>Comparison of different bear types and their characteristics</caption>
+>   <thead>
+>     <tr>
+>       <th scope="col">Bear Type</th>
+>       <th scope="col">Coat</th>
+>     </tr>
+>   </thead>
+> </table>
+> ```
+>
+> **7. Missing Form Labels and Validation**
+> - **Problem**: No proper labels for form inputs, no required field validation
+> - **Why bad**: Poor accessibility, no input validation
+> - **Fix**: Added proper `<label>` tags and HTML5 validation
+>
+> ```html
+> <!-- Bad -->
+> Your name:
+> <input type="text" name="name" id="name">
+> 
+> <!-- Good -->
+> <label for="name">Your name:</label>
+> <input type="text" name="name" id="name" required>
+> ```
+>
+> **8. Non-semantic Button**
+> - **Problem**: Used `<div class="show-hide">` for interactive element
+> - **Why bad**: Not keyboard accessible, poor screen reader support
+> - **Fix**: Changed to proper `<button>` element with focus styles
+>
+> ```html
+> <!-- Bad -->
+> <div class="show-hide">Show comment</div>
+> 
+> <!-- Good -->
+> <button class="show-hide" type="button" tabindex="0">Show comment</button>
+> ```
+>
+> **9. No Image Error Handling**
+> - **Problem**: No fallback for broken images, no availability checking
+> - **Why bad**: Broken images show up, poor user experience
+> - **Fix**: Added image availability checking and placeholder system
+>
+> ```js
+> // Bad: No image error handling
+> '<img src="' + bear.image + '" alt="Image of ' + bear.name + '">'
+> 
+> // Good: With error handling and fallback
+> async checkImageAvailability(imageUrl) {
+>   try {
+>     const response = await fetch(imageUrl, { method: 'HEAD' });
+>     return response.ok;
+>   } catch (error) {
+>     return false;
+>   }
+> }
+> ```
+>
+> **10. Global Variable Pollution**
+> - **Problem**: All variables declared in global scope
+> - **Why bad**: Namespace pollution, potential conflicts, hard to track
+> - **Fix**: Encapsulated in classes and modules with proper scope management
 
 
 ## 2. Dependency- and Build Management Playground
