@@ -14,7 +14,7 @@ export class BearManager {
         p.textContent = msg;
         this.root.appendChild(p);
     }
-
+    //
     async init() {
         try {
             const bears = await this.loadBears();
