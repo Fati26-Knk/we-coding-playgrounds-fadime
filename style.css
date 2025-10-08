@@ -18,7 +18,7 @@ body {
 
 /* || typography */
 
-font[size="7"], font[size="6"], font[size="5"] {
+h1, h2, h3 {
   font-family: 'Sonsie One', cursive;
   color: #2a2a2a;
 }
@@ -28,20 +28,39 @@ p, input, li, table, label {
   color: #2a2a2a;
 }
 
-font[size="7"] {
+h1 {
   font-size: 4rem;
   text-align: center;
   color: white;
   text-shadow: 2px 2px 10px black;
+  margin: 0;
 }
 
-font[size="6"] {
+h2 {
   font-size: 3rem;
   text-align: center;
 }
 
-font[size="5"] {
+h3 {
   font-size: 2.2rem;
+}
+
+p, li, table {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 p, li, table {
@@ -51,7 +70,7 @@ p, li, table {
 
 /* || header layout */
 
-div[class="nav"], article, footer, .secondary {
+header, nav, article, footer, .secondary {
   background-color: green;
 }
 
@@ -63,28 +82,28 @@ article {
   margin-right: 10px;
 }
 
-div[class="nav"] {
+nav {
   height: 50px;
-  background-color: ff80ff;
+  background-color: #ff80ff;
   display: flex;
   padding: 1% 0;
   margin-bottom: 10px;
 }
 
-div[class="nav"] ul {
+nav ul {
   padding: 0;
   list-style-type: none;
   flex: 2;
   display: flex;
 }
 
-div[class="nav"] li {
+nav li {
   display: inline;
   text-align: center;
   flex: 1;
 }
 
-div[class="nav"] a {
+nav a {
   display: inline-block;
   font-size: 2rem;
   text-transform: uppercase;
@@ -92,7 +111,7 @@ div[class="nav"] a {
   color: black;
 }
 
-div[class="nav"] .search {
+nav .search {
   flex: 1;
   display: flex;
   align-items: center;
@@ -179,6 +198,24 @@ audio {
 
 .show-hide {
   cursor: pointer;
+  text-align: center;
+  width: 150px;
+  background: #333;
+  border: 0;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 32px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.show-hide:hover {
+  background: #555;
+}
+
+.show-hide:focus {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
 }
 
 .comments font[size="6"] {
@@ -209,23 +246,15 @@ audio {
   flex: 6;
 }
 
-.show-hide {
-  text-align: center;
-  width: 150px;
-}
-
-.comment-form input, .comment-form label, .show-hide {
+.comment-form input, .comment-form label {
   font-size: 1.6rem;
   line-height: 32px;
 }
 
-.comment-form input[type="submit"], .show-hide {
+.comment-form input[type="submit"] {
   background: #333;
   border: 0;
   color: white;
-}
-
-.comment-form input[type="submit"] {
   width: 30%;
   display: block;
   margin: 0 auto;
