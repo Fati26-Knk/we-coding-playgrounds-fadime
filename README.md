@@ -64,7 +64,7 @@ Das ursprüngliche Projekt enthielt verschiedene schlechte Coding Practices, die
 
 ---
 
-## 1. 🏗️ **Monolithische Code-Struktur → Modulare Architektur**
+## 1. **Monolithische Code-Struktur → Modulare Architektur**
 
 ### **Problem:**
 - Gesamter JavaScript-Code war in einer einzigen Datei (vermutlich in HTML eingebettet)
@@ -87,7 +87,7 @@ Das ursprüngliche Projekt enthielt verschiedene schlechte Coding Practices, die
 
 ---
 
-## 2. 🔄 **Callback Hell → Async/Await**
+## 2. **Callback Hell → Async/Await**
 
 ### **Problem:**
 - Verschachtelte `.then()` Callbacks
@@ -123,7 +123,7 @@ async loadBearData() {
 
 ---
 
-## 3. 🏷️ **Nicht-semantisches HTML → Semantische Struktur**
+## 3. **Nicht-semantisches HTML → Semantische Struktur**
 
 ### **Problem:**
 - Verwendung von generischen `<div>` und `<span>` Tags
@@ -155,7 +155,7 @@ async loadBearData() {
 
 ---
 
-## 4. 🚫 **Fehlende Fehlerbehandlung → Comprehensive Error Handling**
+## 4. **Fehlende Fehlerbehandlung → Comprehensive Error Handling**
 
 ### **Problem:**
 - Keine try/catch Blöcke
@@ -185,7 +185,7 @@ async loadBearData() {
 
 ---
 
-## 5. 🖼️ **Fehlende Bild-Fallbacks → Image Availability Check**
+## 5. **Fehlende Bild-Fallbacks → Image Availability Check**
 
 ### **Problem:**
 - Broken Images bei fehlenden URLs
@@ -215,7 +215,7 @@ async checkImageAvailability(imageUrl) {
 
 ---
 
-## 6. 🌐 **Globale Variablen → Module Scope**
+## 6. **Globale Variablen → Module Scope**
 
 ### **Problem:**
 - Variablen im globalen `window` Namespace
@@ -244,7 +244,7 @@ export class BearManager {
 
 ---
 
-## 7. 🔒 **Unsichere DOM-Manipulation → Sichere Methoden**
+## 7. **Unsichere DOM-Manipulation → Sichere Methoden**
 
 ### **Problem:**
 - Verwendung von `innerHTML` mit unvalidiertem Content
@@ -269,7 +269,7 @@ element.appendChild(para);
 
 ---
 
-## 8. 🔍 **Fehlende Input-Validierung → Comprehensive Validation**
+## 8. **Fehlende Input-Validierung → Comprehensive Validation**
 
 ### **Problem:**
 - Keine Validierung von Formulareingaben
@@ -299,7 +299,7 @@ if (!searchKey) {
 
 ---
 
-## 9. ♿ **Fehlende Accessibility → ARIA und Keyboard Support**
+## 9. **Fehlende Accessibility → ARIA und Keyboard Support**
 
 ### **Problem:**
 - Keine ARIA-Labels
@@ -328,7 +328,7 @@ toggleBtn.addEventListener('keydown', (e) => {
 
 ---
 
-## 10. 🎯 **Unpräzise Suche → Targeted Article Search**
+## 10. **Unpräzise Suche → Targeted Article Search**
 
 ### **Problem:**
 - Suche in gesamtem Document
@@ -351,7 +351,7 @@ articleElements.forEach(article => {
 
 ---
 
-## 📊 **Quantitative Verbesserungen:**
+## **Quantitative Verbesserungen:**
 
 - **Module:** 1 → 5 separate Dateien
 - **Try/Catch Blöcke:** 0 → 20+
@@ -363,7 +363,7 @@ articleElements.forEach(article => {
 
 ---
 
-## 🎯 **Resultat:**
+## **Resultat:**
 
 Das refactorierte Projekt ist jetzt:
 - ✅ **Modular und wartbar**
