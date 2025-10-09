@@ -109,21 +109,21 @@ Das ursprüngliche Projekt enthielt verschiedene schlechte Coding Practices, die
 ```javascript
 // Vorher (Callback Hell):
 fetch(url)
-  .then(response => response.json())
-  .then(data => processData(data))
-  .then(result => updateUI(result))
-  .catch(error => handleError(error));
+        .then(response => response.json())
+        .then(data => processData(data))
+        .then(result => updateUI(result))
+        .catch(error => handleError(error));
 
 // Nachher (Async/Await):
 async loadBearData() {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    const result = await processData(data);
-    updateUI(result);
-  } catch (error) {
-    handleError(error);
-  }
+   try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const result = await processData(data);
+      updateUI(result);
+   } catch (error) {
+      handleError(error);
+   }
 }
 ```
 
@@ -187,12 +187,12 @@ async loadBearData() {
 
 ```javascript
 async loadBearData() {
-  try {
-    // API Call
-  } catch (error) {
-    console.error('Error loading bear data:', error);
-    this.showErrorMessage('Failed to load bear information. Please refresh the page to try again.');
-  }
+   try {
+      // API Call
+   } catch (error) {
+      console.error('Error loading bear data:', error);
+      this.showErrorMessage('Failed to load bear information. Please refresh the page to try again.');
+   }
 }
 ```
 
@@ -220,12 +220,12 @@ async loadBearData() {
 
 ```javascript
 async checkImageAvailability(imageUrl) {
-  try {
-    const response = await fetch(imageUrl, { method: 'HEAD' });
-    return response.ok;
-  } catch (error) {
-    return false;
-  }
+   try {
+      const response = await fetch(imageUrl, { method: 'HEAD' });
+      return response.ok;
+   } catch (error) {
+      return false;
+   }
 }
 ```
 
