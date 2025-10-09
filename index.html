@@ -1,27 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self';
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
                script-src 'self';
                style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
                font-src https://fonts.gstatic.com;
                connect-src 'self' https://*.wikipedia.org;
-               img-src 'self' data: https:;">
+               img-src 'self' data: https:;"
+    />
     <title>Wildlife Website - Bears Information</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐻</text></svg>">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐻</text></svg>"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="src/style.css" />
     <style>
-      body { font-family: Arial, sans-serif; }
-      .highlight { background-color: yellow; color: black; }
-      .comment-wrapper { display: block; }
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .highlight {
+        background-color: yellow;
+        color: black;
+      }
+      .comment-wrapper {
+        display: block;
+      }
     </style>
   </head>
   <body>
-
     <!--
       BEGIN:
         Semantic HTML markup
@@ -41,8 +56,13 @@
 
       <form class="search" id="search-form">
         <label for="search-input" class="sr-only">Search website content</label>
-        <input type="search" id="search-input" name="q" placeholder="Search query">
-        <input type="submit" value="Go!">
+        <input
+          type="search"
+          id="search-input"
+          name="q"
+          placeholder="Search query"
+        />
+        <input type="submit" value="Go!" />
       </form>
     </nav>
 
@@ -53,14 +73,18 @@
           <strong>By Evan Wild</strong>
         </p>
         <p>
-          Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food.
+          Tall, lumbering, angry, dangerous. The real live bears of this world
+          are proud, independent creatures, self-serving and always on the hunt
+          for food.
         </p>
 
         <section>
           <h3>Types of bear</h3>
 
           <table>
-            <caption>Comparison of different bear types and their characteristics</caption>
+            <caption>
+              Comparison of different bear types and their characteristics
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Bear Type</th>
@@ -95,41 +119,49 @@
         <section>
           <h3>Habitats and Eating habits</h3>
           <p>
-            Wild bears eat a variety of meat, fish, fruit, nuts, and other naturally growing ingredients...
+            Wild bears eat a variety of meat, fish, fruit, nuts, and other
+            naturally growing ingredients...
           </p>
-          <img src="media/wild-bear.jpg" alt="Wild bear in forest">
+          <img src="media/wild-bear.jpg" alt="Wild bear in forest" />
 
           <p>
-            Urban (gentrified) bears on the other hand have largely abandoned the old ways...
+            Urban (gentrified) bears on the other hand have largely abandoned
+            the old ways...
           </p>
-          <img src="media/urban-bear.jpg" alt="Urban bear near buildings">
+          <img src="media/urban-bear.jpg" alt="Urban bear near buildings" />
         </section>
 
         <section>
           <h3>Mating rituals</h3>
-          <p>
-            Bears are romantic creatures by nature...
-          </p>
+          <p>Bears are romantic creatures by nature...</p>
           <audio controls>
-            <source src="media/bear.mp3" type="audio/mp3">
-            <source src="media/bear.ogg" type="audio/ogg">
-            <p>It looks like your browser doesn't support HTML5 audio players.</p>
-            <p>Audio transcript: [Bear sounds and nature ambiance representing mating calls]</p>
+            <source src="media/bear.mp3" type="audio/mp3" />
+            <source src="media/bear.ogg" type="audio/ogg" />
+            <p>
+              It looks like your browser doesn't support HTML5 audio players.
+            </p>
+            <p>
+              Audio transcript: [Bear sounds and nature ambiance representing
+              mating calls]
+            </p>
           </audio>
         </section>
 
         <aside>
           <h3>About the author</h3>
-          <p>
-            Evan Wild is an unemployed plumber from Doncaster...
-          </p>
+          <p>Evan Wild is an unemployed plumber from Doncaster...</p>
         </aside>
 
         <section class="comments">
           <h2>Comments</h2>
 
           <!-- Toggle -->
-          <button id="toggle-comments" class="show-hide" type="button" aria-expanded="false">
+          <button
+            id="toggle-comments"
+            class="show-hide"
+            type="button"
+            aria-expanded="false"
+          >
             Show comments
           </button>
 
@@ -141,19 +173,35 @@
               <div class="flex-pair">
                 <label for="name">Your name:</label>
                 <!-- Browser darf Namen vorschlagen -->
-                <input id="name" name="name" type="text" required autocomplete="name" />
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  autocomplete="name"
+                />
               </div>
 
               <div class="flex-pair">
                 <label for="comment">Your comment:</label>
                 <!-- Kein Auto-Fill für den Kommentar -->
-                <input id="comment" name="comment" type="text" required autocomplete="off" />
+                <input
+                  id="comment"
+                  name="comment"
+                  type="text"
+                  required
+                  autocomplete="off"
+                />
               </div>
 
               <input type="submit" value="Add comment" />
             </form>
 
-            <ul id="comment-list" class="comment-container" aria-live="polite"></ul>
+            <ul
+              id="comment-list"
+              class="comment-container"
+              aria-live="polite"
+            ></ul>
           </div>
         </section>
 
@@ -184,6 +232,6 @@
     -->
 
     <!-- Load JavaScript modules -->
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="src/main.ts"></script>
   </body>
 </html>
