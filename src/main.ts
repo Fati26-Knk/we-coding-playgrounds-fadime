@@ -3,11 +3,13 @@
 import { BearManager } from './bearManager.js';
 import { initComments } from './comments.js';
 import { initSearch } from './search.js';
+// Import Web Component
+import './components/CommentForm.js';
 
 interface CommentElements {
   toggleBtn: HTMLButtonElement | null;
   wrapper: HTMLElement | null;
-  form: HTMLFormElement | null;
+  form: HTMLFormElement | HTMLElement | null; // Can be form or web component
   list: HTMLElement | null;
 }
 
@@ -33,7 +35,10 @@ class WildlifeApp {
           'toggle-comments'
         ) as HTMLButtonElement | null,
         wrapper: document.getElementById('comment-wrapper'),
-        form: document.getElementById('comment-form') as HTMLFormElement | null,
+        // Try to find web component first, fallback to traditional form
+        form:
+          document.querySelector('comment-form') ||
+          (document.getElementById('comment-form') as HTMLFormElement | null),
         list: document.getElementById('comment-list'),
       };
 
