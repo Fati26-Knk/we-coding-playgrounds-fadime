@@ -49,7 +49,7 @@ export class BearManager {
     this.baseUrl = 'https://en.wikipedia.org/w/api.php';
     this.title = 'List_of_ursids';
     this.moreBears = document.querySelector('.more_bears');
-    this.placeholderImage = './media/placeholder-bear.svg';
+    this.placeholderImage = '/placeholder-bear.svg';
     console.log(
       'BearManager constructor - moreBears element found:',
       !!this.moreBears

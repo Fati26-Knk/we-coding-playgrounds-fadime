@@ -1,6 +1,6 @@
 // Image utility functions with TypeScript types
 
-export const PLACEHOLDER_SRC = 'media/placeholder-bear.svg';
+export const PLACEHOLDER_SRC = '/placeholder-bear.svg';
 
 /**
  * Prüft per HEAD-Request, ob Bild erreichbar ist.
