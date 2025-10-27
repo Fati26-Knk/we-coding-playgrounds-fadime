@@ -1,6 +1,7 @@
 import BearsTable from './BearsTable';
 import AudioSection from './AudioSection';
 import CommentsSection from './CommentsSection';
+import BearList from './BearList';
 import { Comment } from '../types';
 
 interface ArticleProps {
@@ -55,6 +56,7 @@ function Article({ comments, onAddComment }: ArticleProps) {
 
       <section className="more_bears">
         <h3>More Bears</h3>
+        <BearList />
       </section>
     </article>
   );
