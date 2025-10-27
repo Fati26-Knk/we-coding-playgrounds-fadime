@@ -166,14 +166,8 @@ export class BearManager {
     }
   }
 
-  private async checkImageAvailability(imageUrl: string): Promise<boolean> {
-    try {
-      const response: Response = await fetch(imageUrl, { method: 'HEAD' });
-      return response.ok;
-    } catch (error: unknown) {
-      return false;
-    }
-  }
+  // Removed checkImageAvailability method - let the browser's img.onerror handle CSP/loading issues
+  // This avoids CSP errors in console from preflight checks
 
   private async extractBears(wikitext: string): Promise<void> {
     const speciesTables: string[] = wikitext.split('{{Species table/end}}');
@@ -203,13 +197,8 @@ export class BearManager {
             if (fileName) {
               try {
                 imageUrl = await this.fetchImageUrl(fileName);
-
-                // Prüfe ob Bild verfügbar ist
-                const isImageAvailable: boolean =
-                  await this.checkImageAvailability(imageUrl);
-                if (!isImageAvailable) {
-                  imageUrl = this.placeholderImage;
-                }
+                // Let the browser's img.onerror handle CSP/loading issues
+                // No need to preflight check which causes CSP errors
               } catch (error: unknown) {
                 console.warn(`Error processing image ${fileName}:`, error);
                 imageUrl = this.placeholderImage;
