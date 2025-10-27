@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import BearsTable from './BearsTable';
 import AudioSection from './AudioSection';
 import CommentsSection from './CommentsSection';
@@ -10,7 +9,7 @@ interface ArticleProps {
   searchQuery: string;
 }
 
-function Article({ comments, onAddComment, searchQuery }: ArticleProps) {
+function Article({ comments, onAddComment }: ArticleProps) {
   return (
     <article>
       <h2>The trouble with Bears</h2>
