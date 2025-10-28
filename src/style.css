@@ -346,3 +346,12 @@ audio {
 .comment-container li p:nth-child(2) {
   flex: 5;
 }
+
+/* || Search highlighting */
+
+mark.highlight {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  padding: 0 2px;
+}
