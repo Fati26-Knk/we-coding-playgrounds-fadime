@@ -169,6 +169,35 @@ export class BearManager {
   // Removed checkImageAvailability method - let the browser's img.onerror handle CSP/loading issues
   // This avoids CSP errors in console from preflight checks
 
+  /**
+   * Cleans the range text by removing Wiki markup and technical details
+   * Extracts only the geographical information
+   */
+  private cleanRangeText(rangeText: string): string {
+    if (!rangeText || rangeText === 'Range information not available') {
+      return rangeText;
+    }
+
+    // Remove everything after and including |range-image=
+    let cleaned = rangeText.split('|range-image=')[0];
+
+    // Remove everything after and including |range-image-size=
+    cleaned = cleaned.split('|range-image-size=')[0];
+
+    // Remove |range= prefix if present
+    cleaned = cleaned.replace(/^\|?range=/i, '');
+
+    // Trim whitespace
+    cleaned = cleaned.trim();
+
+    // If nothing left, return default message
+    if (!cleaned) {
+      return 'Range information not available';
+    }
+
+    return cleaned;
+  }
+
   private async extractBears(wikitext: string): Promise<void> {
     const speciesTables: string[] = wikitext.split('{{Species table/end}}');
     const bears: BearData[] = [];
@@ -210,7 +239,9 @@ export class BearManager {
             name: nameMatch[1].trim(),
             binomial: binomialMatch[1].trim(),
             image: imageUrl,
-            range: rangeMatch?.[1]?.trim() || 'Range information not available',
+            range: this.cleanRangeText(
+              rangeMatch?.[1]?.trim() || 'Range information not available'
+            ),
           };
 
           bears.push(bear);

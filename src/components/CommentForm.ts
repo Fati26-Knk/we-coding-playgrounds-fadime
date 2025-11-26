@@ -86,28 +86,36 @@ export class CommentForm extends HTMLElement {
           align-self: center;
           flex: 2;
           text-align: right;
-          font-size: 1.6rem;
-          line-height: 32px;
-          font-weight: normal;
+          font-size: 1.8rem;
+          line-height: 36px;
+          font-weight: 500;
+          color: #f0f0f0; /* Very light for excellent readability */
         }
 
         /* Input Field Styling */
         input[type="text"] {
           margin-left: 1rem;
           flex: 6;
-          font-size: 1.6rem;
-          line-height: 32px;
-          padding: 0.5rem;
-          border: 1px solid #ccc;
+          font-size: 1.8rem;
+          line-height: 36px;
+          padding: 8px;
+          background-color: #ffffff; /* White background */
+          color: #1a1a1a; /* Dark text */
+          border: 2px solid #4a8a4a; /* Green border */
           border-radius: 4px;
           font-family: inherit;
         }
 
         /* Input Focus State (Accessibility) */
         input[type="text"]:focus {
-          outline: 2px solid #007acc;
-          outline-offset: 2px;
-          border-color: #007acc;
+          outline: none;
+          border-color: #6ac86a; /* Bright green */
+          box-shadow: 0 0 5px rgba(74, 138, 74, 0.5);
+        }
+
+        /* Placeholder Styling */
+        input[type="text"]::placeholder {
+          color: #888; /* Gray placeholder */
         }
 
         /* Input Error State */
@@ -118,14 +126,15 @@ export class CommentForm extends HTMLElement {
 
         /* Submit Button */
         input[type="submit"] {
-          background: #333;
-          border: 0;
-          color: white;
+          background: #4a8a4a; /* Green button */
+          border: 2px solid #5aa85a;
+          color: #ffffff; /* White text */
           width: 30%;
           display: block;
           margin: 0 auto;
-          padding: 0.8rem 1.5rem;
-          font-size: 1.6rem;
+          padding: 10px 20px;
+          font-size: 1.8rem;
+          font-weight: bold;
           font-family: inherit;
           cursor: pointer;
           border-radius: 4px;
@@ -134,12 +143,13 @@ export class CommentForm extends HTMLElement {
 
         /* Submit Button Hover */
         input[type="submit"]:hover {
-          background: #555;
+          background: #5aa85a; /* Lighter green */
+          border-color: #6ac86a;
         }
 
         /* Submit Button Focus (Accessibility) */
         input[type="submit"]:focus {
-          outline: 2px solid #007acc;
+          outline: 2px solid #6ac86a;
           outline-offset: 2px;
         }
 
@@ -151,9 +161,10 @@ export class CommentForm extends HTMLElement {
 
         /* Heading */
         h3 {
-          font-size: 2rem;
+          font-size: 2.4rem;
           margin-bottom: 1.5rem;
-          color: #333;
+          color: #f5f5f5; /* Very light - excellent visibility */
+          text-align: center;
         }
 
         /* Screen Reader Only Text */
