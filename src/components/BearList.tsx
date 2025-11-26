@@ -120,6 +120,31 @@ function BearList() {
     }
   };
 
+  const cleanRangeText = (rangeText: string): string => {
+    if (!rangeText || rangeText === 'Range information not available') {
+      return rangeText;
+    }
+
+    // Remove everything after and including |range-image=
+    let cleaned = rangeText.split('|range-image=')[0];
+    
+    // Remove everything after and including |range-image-size=
+    cleaned = cleaned.split('|range-image-size=')[0];
+    
+    // Remove |range= prefix if present
+    cleaned = cleaned.replace(/^\|?range=/i, '');
+    
+    // Trim whitespace
+    cleaned = cleaned.trim();
+    
+    // If nothing left, return default message
+    if (!cleaned) {
+      return 'Range information not available';
+    }
+    
+    return cleaned;
+  };
+
   const extractBears = async (wikitext: string): Promise<BearData[]> => {
     const speciesTables = wikitext.split('{{Species table/end}}');
     const bearsArray: BearData[] = [];
@@ -156,7 +181,7 @@ function BearList() {
             name: nameMatch[1].trim(),
             binomial: binomialMatch[1].trim(),
             image: imageUrl,
-            range: rangeMatch?.[1]?.trim() || 'Range information not available',
+            range: cleanRangeText(rangeMatch?.[1]?.trim() || 'Range information not available'),
           };
 
           bearsArray.push(bear);
