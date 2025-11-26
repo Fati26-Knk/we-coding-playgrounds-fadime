@@ -7,14 +7,15 @@ body {
 }
 
 html {
-  font-size: 10px;
-  background-color: #dde;
+  font-size: 12px; /* Increased from 10px for better readability */
+  background-color: #000000; /* Dark mode: Black background */
 }
 
 body {
   width: 80%;
   min-width: 1024px;
   margin: 0 auto;
+  background-color: #0a2f0a; /* Dark mode: Dark green for content area */
 }
 
 /* || typography */
@@ -23,7 +24,7 @@ h1,
 h2,
 h3 {
   font-family: 'Sonsie One', cursive;
-  color: #2a2a2a;
+  color: #f5f5f5; /* Very light gray - much better contrast */
 }
 
 p,
@@ -32,11 +33,11 @@ li,
 table,
 label {
   font-family: 'Open Sans Condensed', sans-serif;
-  color: #2a2a2a;
+  color: #e8e8e8; /* Very light - excellent contrast on dark green */
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 5rem; /* Increased from 4rem */
   text-align: center;
   color: white;
   text-shadow: 2px 2px 10px black;
@@ -44,19 +45,19 @@ h1 {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 3.5rem; /* Increased from 3rem */
   text-align: center;
 }
 
 h3 {
-  font-size: 2.2rem;
+  font-size: 2.6rem; /* Increased from 2.2rem */
 }
 
 p,
 li,
 table {
-  font-size: 1.6rem;
-  line-height: 1.5;
+  font-size: 1.8rem; /* Increased from 1.6rem */
+  line-height: 1.6; /* Increased line-height for better readability */
 }
 
 /* Screen reader only class */
@@ -72,13 +73,6 @@ table {
   border: 0;
 }
 
-p,
-li,
-table {
-  font-size: 1.6rem;
-  line-height: 1.5;
-}
-
 /* || header layout */
 
 header,
@@ -86,7 +80,7 @@ nav,
 article,
 footer,
 .secondary {
-  background-color: #1a5f1a; /* Darker green for better contrast - WCAG AA compliant */
+  background-color: #0f3d0f; /* Dark mode: Dark green background */
 }
 
 article,
@@ -101,10 +95,11 @@ article {
 
 nav {
   height: 50px;
-  background-color: #c930c9; /* Darker pink/magenta for better contrast - WCAG AA compliant */
+  background-color: #1a1a1a; /* Dark mode: Dark gray navigation */
   display: flex;
   padding: 1% 0;
   margin-bottom: 10px;
+  border-bottom: 2px solid #333; /* Add subtle border */
 }
 
 nav ul {
@@ -122,10 +117,14 @@ nav li {
 
 nav a {
   display: inline-block;
-  font-size: 2rem;
+  font-size: 2.2rem; /* Increased from 2rem */
   text-transform: uppercase;
   text-decoration: none;
-  color: black;
+  color: #ffffff; /* White - perfect contrast */
+}
+
+nav a:hover {
+  color: #ffffff; /* Dark mode: White on hover */
 }
 
 nav .search {
@@ -137,20 +136,33 @@ nav .search {
 }
 
 .search input {
-  font-size: 1.6rem;
-  height: 32px;
+  font-size: 1.8rem; /* Increased from 1.6rem */
+  height: 36px; /* Increased from 32px */
 }
 
 .search input[type='search'] {
   flex: 3;
+  background-color: #3b3d3b; /* Dark green input */
+  color: #ffffff; /* White text for best readability */
+  border: 1px solid #555; /* Brighter green border */
+  padding: 0 0.5rem;
+}
+
+.search input[type='search']::placeholder {
+  color: #ffffff; /* Light green placeholder */
 }
 
 .search input[type='submit'] {
   flex: 1;
   margin-left: 1rem;
-  background: #333;
+  background: #444; /* Dark mode: Lighter gray button */
   border: 0;
   color: white;
+  cursor: pointer;
+}
+
+.search input[type='submit']:hover {
+  background: #555; /* Hover effect */
 }
 
 /* || main layout */
@@ -175,25 +187,50 @@ footer {
 
 table {
   width: 100%;
-  background-color: #dde;
+  background-color: #0a2f0a; /* Dark mode: Dark green background */
   border-collapse: collapse;
+  border: 2px solid #4a8a4a; /* Brighter green border for better visibility */
 }
 
 th,
 td {
   padding: 10px;
+  color: #f0f0f0; /* Very light for excellent readability */
 }
 
 td {
   text-align: center;
 }
 
+/* Sidebar links styling - for "Related" section */
+.secondary a {
+  color: #90ee90; /* Light green links - excellent visibility */
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+
+.secondary a:hover {
+  color: #b4ffb4; /* Very light green on hover */
+  text-decoration: underline;
+}
+
+.secondary a:visited {
+  color: #7ec87e; /* Slightly darker green for visited links */
+}
+
 th[scope='col'] {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #4a8a4a; /* Brighter green border */
+  background-color: #1a4d1a; /* Dark mode: Slightly lighter green for headers */
+  font-weight: bold;
+  color: #ffffff; /* White for headers */
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #def;
+  background-color: #0f4a0f; /* Slightly lighter green rows for contrast */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #0a3a0a; /* Alternating row color */
 }
 
 /* styling content images and audio */
@@ -212,30 +249,32 @@ audio {
 .audio-container {
   margin: 2rem 0;
   padding: 1.5rem;
-  background-color: #f5f5f5;
+  background-color: #0a2f0a; /* Dark mode: Dark green background */
   border-radius: 8px;
+  border: 2px solid #4a8a4a; /* Brighter green border */
 }
 
 .audio-transcript {
   margin-top: 2rem;
   padding: 1.5rem;
-  background-color: #fff;
-  border: 2px solid #1a5f1a;
+  background-color: #0f3d0f; /* Dark mode: Dark green background */
+  border: 2px solid #4a8a4a; /* Brighter green border */
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for depth */
 }
 
 .audio-transcript h4 {
   margin-top: 0;
-  color: #1a5f1a;
-  font-size: 2rem;
-  border-bottom: 2px solid #1a5f1a;
+  color: #b4ffb4; /* Very light green - excellent contrast */
+  font-size: 2.4rem; /* Increased from 2rem */
+  border-bottom: 2px solid #4a8a4a; /* Brighter green border */
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
 
 .transcript-content {
-  line-height: 1.8;
+  line-height: 2; /* Increased from 1.8 for better readability */
+  font-size: 1.8rem; /* Added explicit font size */
 }
 
 .transcript-content p {
@@ -253,32 +292,33 @@ audio {
 }
 
 .transcript-content strong {
-  color: #1a5f1a;
+  color: #a0f0a0; /* Bright light green for emphasis */
   font-weight: bold;
 }
 
 /* Comments styling */
 
 .comments {
-  background-color: #def;
+  background-color: #0a2f0a; /* Dark mode: Dark green background */
   padding: 10px;
+  border: 2px solid #4a8a4a; /* Brighter green border */
 }
 
 .show-hide {
   cursor: pointer;
   text-align: center;
-  width: 150px;
-  background: #333;
+  width: 170px; /* Increased from 150px */
+  background: #4a8a4a;
   border: 0;
   color: white;
-  font-size: 1.6rem;
-  line-height: 32px;
-  padding: 8px 16px;
+  font-size: 1.8rem; /* Increased from 1.6rem */
+  line-height: 36px; /* Increased from 32px */
+  padding: 10px 18px; /* Increased padding */
   border-radius: 4px;
 }
 
 .show-hide:hover {
-  background: #555;
+  background: #4a8a4a;
 }
 
 .show-hide:focus {
@@ -287,7 +327,7 @@ audio {
 }
 
 .comments font[size='6'] {
-  font-size: 2rem;
+  font-size: 2.4rem; /* Increased from 2rem */
 }
 
 .comments font[size='6']:nth-of-type(2) {
@@ -296,6 +336,12 @@ audio {
 
 .comment-form {
   margin-bottom: 3rem;
+}
+
+.comment-form h3,
+.comment-form h2 {
+  color: #f5f5f5; /* Very light - excellent visibility */
+  text-align: center;
 }
 
 .comment-form .flex-pair {
@@ -307,26 +353,49 @@ audio {
   align-self: center;
   flex: 2;
   text-align: right;
+  color: #f0f0f0; /* Very light for excellent readability */
+  font-weight: 500;
 }
 
 .comment-form input {
   margin-left: 1rem;
   flex: 6;
+  background-color: #ffffff; /* White input background */
+  color: #ffffff; /* Dark text on white */
+  border: 2px solid #4a8a4a;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.comment-form input:focus {
+  outline: none;
+  border-color: #6ac86a;
+  box-shadow: 0 0 5px rgba(74, 138, 74, 0.5);
 }
 
 .comment-form input,
 .comment-form label {
-  font-size: 1.6rem;
-  line-height: 32px;
+  font-size: 1.8rem; /* Increased from 1.6rem */
+  line-height: 36px; /* Increased from 32px */
 }
 
 .comment-form input[type='submit'] {
-  background: #333;
-  border: 0;
-  color: white;
+  background: #4a8a4a; /* Green button */
+  border: 2px solid #5aa85a;
+  color: #ffffff; /* White text */
+  font-size: 1.8rem;
+  font-weight: bold;
   width: 30%;
   display: block;
   margin: 0 auto;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.comment-form input[type='submit']:hover {
+  background: #5aa85a;
+  border-color: #6ac86a;
 }
 
 .comment-container {
@@ -349,9 +418,40 @@ audio {
 
 /* || Search highlighting */
 
-mark.search-highlight {
+mark.highlight {
   background-color: yellow;
   color: black;
   font-weight: bold;
   padding: 0 2px;
+}
+
+/* || More Bears Section Styling */
+
+.more_bears h4 {
+  font-size: 2.6rem; /* Large bear name */
+  color: #b4ffb4; /* Very light green - excellent visibility */
+  font-weight: bold;
+  margin: 1rem 0 0.5rem 0;
+  font-family: 'Sonsie One', cursive;
+}
+
+.more_bears p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: #e8e8e8; /* Light text */
+  margin: 0.5rem 0;
+}
+
+.more_bears em {
+  font-style: italic;
+  color: #90ee90; /* Light green for labels */
+  font-weight: bold;
+}
+
+.more_bears div {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #0a2f0a; /* Dark green background */
+  border: 2px solid #4a8a4a; /* Green border */
+  border-radius: 8px;
 }
