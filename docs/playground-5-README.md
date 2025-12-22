@@ -561,21 +561,6 @@ curl http://localhost:5000/api/bears
 
 ---
 
-## Achievements
-
-- ✅ Backend Framework Setup (3 points)
-- ✅ Wikipedia API Proxy (3 points)
-- ✅ CORS Configuration (2 points)
-- ✅ Frontend API Integration (2 points)
-- ✅ Frontend Multi-Stage Dockerfile (3 points)
-- ✅ Backend Multi-Stage Dockerfile (3 points)
-- ✅ Development Docker Compose (2 points)
-- ✅ Production Docker Compose (2 points)
-
-**Total: 20/20 Points** 🎉
-
----
-
 ## Next Steps
 
 Potential improvements:
