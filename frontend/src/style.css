@@ -361,7 +361,7 @@ audio {
   margin-left: 1rem;
   flex: 6;
   background-color: #ffffff; /* White input background */
-  color: #ffffff; /* Dark text on white */
+  color: #000000; /* Black text on white */
   border: 2px solid #4a8a4a;
   padding: 8px;
   border-radius: 4px;

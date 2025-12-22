@@ -9,5 +9,12 @@ export default defineConfig(({ mode }) => ({
   base: mode === 'production' ? '/we-coding-playgrounds-fadime/' : '/',
   server: {
     port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://backend:5000',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
 }));
